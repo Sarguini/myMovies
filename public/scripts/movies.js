@@ -2,7 +2,6 @@ const movieContainer = document.getElementById('movies')
 const searchBtn = document.querySelector('.btn-search')
 
 
-
 const searchMovies = (movie) => {
   movieContainer.innerHTML = ""
 
@@ -40,29 +39,10 @@ const searchMovies = (movie) => {
         </section>`
         console.log(movie.Title)
         movieContainer.insertAdjacentHTML('beforeend', movieCard)
+
       })
-
-      const btn_addToMyList = document.getElementsByClassName('card-action');
-
-      const addMovieToMyList = () => {
-        let movieName = h1.value;
-        console.log(movieName);
-      
-        fetch(`http://www.omdbapi.com/?t=${movieName}&apikey=adf1f2d7&`)
-          .then(response => response.json())
-          .then((data) => {
-            console.log(data.Search);
-          });
-      };
-       
-      btn_addToMyList.addEventListener('click', (event) => {
-        console.log(event, "Inside addToMyList - Listener");
-        addMovieToMyList(movie);
-        // getTestFromDB()
-      });
     })
 }
-
 
 
 
